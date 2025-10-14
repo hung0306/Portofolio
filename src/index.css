@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+/* Subtle global background gradients for light and dark */
+body {
+  background-image: radial-gradient(
+      closest-side at 20% 10%,
+      rgba(99, 102, 241, 0.08),
+      rgba(255, 255, 255, 0)
+    ),
+    radial-gradient(
+      closest-side at 80% 30%,
+      rgba(236, 72, 153, 0.08),
+      rgba(255, 255, 255, 0)
+    );
+}
+
+.dark body {
+  background-image: radial-gradient(
+      closest-side at 20% 10%,
+      rgba(99, 102, 241, 0.12),
+      rgba(17, 24, 39, 0)
+    ),
+    radial-gradient(
+      closest-side at 80% 30%,
+      rgba(236, 72, 153, 0.12),
+      rgba(17, 24, 39, 0)
+    );
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
