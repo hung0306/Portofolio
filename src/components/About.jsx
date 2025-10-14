@@ -20,7 +20,11 @@ const About = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <header className="text-center text-gray-800 dark:text-white mb-12">
+        <header
+          className="text-center text-gray-800 dark:text-white mb-12"
+          data-aos="fade-down"
+          data-aos-delay="200"
+        >
           <h2 className="text-5xl font-bold mb-2">{aboutData.title}</h2>
           <p className="text-lg text-gray-800 dark:text-white">
             {aboutData.subtitle}
@@ -39,7 +43,11 @@ const Tabs = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
       {/* Tab headers */}
-      <div className="flex justify-center gap-3 mb-6 flex-wrap">
+      <div
+        className="flex justify-center gap-3 mb-6 flex-wrap"
+        data-aos="fade-up"
+        data-aos-delay="400"
+      >
         {[
           { id: "information", label: "Information", icon: "bx bx-id-card" },
           { id: "tech", label: "Tech", icon: "bx bx-code-alt" },
@@ -68,11 +76,17 @@ const Tabs = () => {
 };
 
 const TechTab = () => (
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-    {portfolioData.tabs.techStacks.map((tech) => (
+  <div
+    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+    data-aos="fade-up"
+    data-aos-delay="600"
+  >
+    {portfolioData.tabs.techStacks.map((tech, index) => (
       <div
         key={tech.id}
         className="bg-gray-800/40 border border-cyan-400/20 rounded-lg p-6 shadow-lg flex flex-col items-center justify-center gap-4"
+        data-aos="fade-up"
+        data-aos-delay={`${800 + index * 100}`}
       >
         <i
           className={`${tech.icon} text-5xl`}
@@ -88,11 +102,19 @@ const InformationTab = () => {
   const leftInfo = aboutData.biodata.slice(0, 3);
   const rightInfo = aboutData.biodata.slice(3, 6);
   return (
-    <div className="text-gray-800 dark:text-white">
+    <div
+      className="text-gray-800 dark:text-white"
+      data-aos="fade-up"
+      data-aos-delay="600"
+    >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
         {/* Left column: narrative cards */}
         <div className="grid grid-cols-1 gap-6">
-          <div className="flex flex-col gap-3 bg-gray-800/40 border border-cyan-400/20 rounded-xl p-6 shadow-lg">
+          <div
+            className="flex flex-col gap-3 bg-gray-800/40 border border-cyan-400/20 rounded-xl p-6 shadow-lg"
+            data-aos="fade-right"
+            data-aos-delay="800"
+          >
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-gray-800 p-4 dark:bg-white dark:text-gray-800 text-white">
                 <i
@@ -108,7 +130,11 @@ const InformationTab = () => {
             </p>
           </div>
 
-          <div className="flex flex-col gap-3 bg-gray-800/40 border border-cyan-400/20 rounded-xl p-6 shadow-lg">
+          <div
+            className="flex flex-col gap-3 bg-gray-800/40 border border-cyan-400/20 rounded-xl p-6 shadow-lg"
+            data-aos="fade-right"
+            data-aos-delay="1000"
+          >
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 p-4 flex items-center justify-center rounded-lg bg-gray-800 dark:bg-white dark:text-gray-800 text-white">
                 <i className={`bx ${aboutData.certificate.icon} text-xl`}></i>
@@ -125,13 +151,19 @@ const InformationTab = () => {
         </div>
 
         {/* Right column: Personal info card with 2 columns x 3 items */}
-        <div className="bg-gray-800/40 border border-cyan-400/20 rounded-xl p-6 shadow-lg">
+        <div
+          className="bg-gray-800/40 border border-cyan-400/20 rounded-xl p-6 shadow-lg"
+          data-aos="fade-left"
+          data-aos-delay="800"
+        >
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <ul className="grid grid-cols-1 gap-4">
               {leftInfo.map((item, index) => (
                 <li
                   key={index}
                   className="flex items-center gap-4 bg-gray-800/60 rounded-lg p-4"
+                  data-aos="fade-up"
+                  data-aos-delay={`${1000 + index * 100}`}
                 >
                   <div className="flex items-center justify-center w-12 h-12 p-4 rounded-lg bg-gray-800 dark:bg-white dark:text-gray-800 text-white">
                     <i
@@ -153,6 +185,8 @@ const InformationTab = () => {
                 <li
                   key={index}
                   className="flex items-center gap-4 bg-gray-800/60 rounded-lg p-4"
+                  data-aos="fade-up"
+                  data-aos-delay={`${1000 + (index + 3) * 100}`}
                 >
                   <div className="flex items-center justify-center w-12 h-12 p-4 rounded-lg bg-gray-800 dark:bg-white dark:text-gray-800 text-white">
                     <i
@@ -177,11 +211,17 @@ const InformationTab = () => {
 };
 
 const ExperienceTab = () => (
-  <div className="grid grid-cols-1 gap-4">
-    {aboutData.experience.map((exp) => (
+  <div
+    className="grid grid-cols-1 gap-4"
+    data-aos="fade-up"
+    data-aos-delay="600"
+  >
+    {aboutData.experience.map((exp, index) => (
       <div
         key={exp.id}
         className="bg-gray-800/40 border border-cyan-400/20 rounded-xl p-6 shadow-lg text-gray-100"
+        data-aos="fade-up"
+        data-aos-delay={`${800 + index * 200}`}
       >
         <div className="flex items-center justify-between mb-2">
           <h4 className="text-lg font-semibold">
