@@ -56,7 +56,7 @@ const Tabs = () => {
           <button
             key={t.id}
             onClick={() => setActive(t.id)}
-            className={`inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-medium transition-all shadow-md ${
+            className={`inline-flex items-center gap-2 px-5 py-2 rounded-full cursor-pointer text-sm font-medium transition-all shadow-md ${
               active === t.id
                 ? "text-gray-900 bg-gradient-to-r from-cyan-400 to-fuchsia-400"
                 : "text-gray-200 border border-cyan-400/30 hover:border-cyan-400/60"
