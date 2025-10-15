@@ -9,13 +9,8 @@ const homeData = {
   img: profileImg,
   buttons: [
     {
-      label: "Explore My Project",
-      href: "#",
-      type: "primary",
-    },
-    {
       label: "Download My CV",
-      href: "https://drive.google.com/file/d/1xEt06GHu2_SyoKNLIBgjvYW53vgEEtZW/view?usp=sharing",
+      href: "https://drive.google.com/file/d/12Gqsurp4i4Rak9EvwYFmELnsSjTSopLg/view?usp=sharing",
       type: "secondary",
     },
   ],
