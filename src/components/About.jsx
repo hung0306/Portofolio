@@ -219,21 +219,31 @@ const ExperienceTab = () => (
     {aboutData.experience.map((exp, index) => (
       <div
         key={exp.id}
-        className="bg-gray-800/40 border border-cyan-400/20 rounded-xl p-6 shadow-lg text-gray-100"
+        className="relative group overflow-hidden rounded-xl p-6 shadow-lg text-gray-100 bg-gray-800/50 border border-cyan-400/20 hover:border-cyan-400/50 hover:shadow-cyan-400/20 hover:shadow-xl transition-all duration-300 backdrop-blur-sm"
         data-aos="fade-up"
         data-aos-delay={`${800 + index * 200}`}
       >
-        <div className="flex items-center justify-between mb-2">
-          <h4 className="text-lg font-semibold">
-            {exp.role} • {exp.company}
-          </h4>
-          <span className="text-sm text-gray-300">{exp.period}</span>
+        {/* left accent bar */}
+        <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-cyan-400 to-fuchsia-400 opacity-70" />
+        {/* subtle gradient glow on hover */}
+        <div className="pointer-events-none absolute -inset-px rounded-[0.75rem] bg-gradient-to-r from-cyan-400/20 via-fuchsia-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+
+        <div className="relative z-10">
+          <div className="flex items-center justify-between mb-3">
+            <h4 className="text-lg font-semibold flex items-center gap-2">
+              <i className="bx bx-briefcase text-cyan-300" />
+              {exp.role} • {exp.company}
+            </h4>
+            <span className="text-xs font-medium px-3 py-1 rounded-full bg-gray-900/60 border border-cyan-400/30 text-gray-100 shadow-sm">
+              {exp.period}
+            </span>
+          </div>
+          <ul className="list-disc pl-5 text-sm text-gray-300 space-y-1">
+            {exp.details.map((d, i) => (
+              <li key={i}>{d}</li>
+            ))}
+          </ul>
         </div>
-        <ul className="list-disc pl-5 text-sm text-gray-300">
-          {exp.details.map((d, i) => (
-            <li key={i}>{d}</li>
-          ))}
-        </ul>
       </div>
     ))}
   </div>
