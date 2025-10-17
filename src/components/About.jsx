@@ -1,7 +1,5 @@
 import aboutData from "../data/aboutData.jsx";
 import { useState } from "react";
-import Tippy from "@tippyjs/react";
-import Swal from "sweetalert2";
 import { portfolioData } from "../data/portofolioData.jsx";
 
 const About = () => {

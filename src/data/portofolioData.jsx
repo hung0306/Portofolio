@@ -73,7 +73,7 @@ export const portfolioData = {
       {
         id: 1,
         icon: "bx bxl-react",
-        label: "React",
+        label: "ReactJS",
         color: "#61DAFB",
       },
       {
@@ -96,14 +96,14 @@ export const portfolioData = {
       },
       {
         id: 5,
-        icon: "bx bxl-typescript",
-        label: "TypeScript",
+        icon: "bx bxl-redux",
+        label: "Redux",
         color: "#3178C6",
       },
       {
         id: 6,
         icon: "bx bxl-git",
-        label: "Git",
+        label: "Git/GitHub",
         color: "#F05032",
       },
     ],

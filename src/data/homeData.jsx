@@ -47,11 +47,11 @@ const homeData = {
     "CSS3",
     "SCSS",
     "JavaScript (ES6+)",
-    "TypeScript",
     "ReactJS",
     "Redux",
     "Ant Design",
     "Bootstrap",
+    "Tailwind CSS",
   ],
 };
 
