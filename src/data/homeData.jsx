@@ -10,7 +10,7 @@ const homeData = {
   buttons: [
     {
       label: "Download My CV",
-      href: "https://drive.google.com/file/d/12Gqsurp4i4Rak9EvwYFmELnsSjTSopLg/view?usp=sharing",
+      href: "https://drive.google.com/file/d/1sNnKK88WHwkGlIjgLCSh4qW5G3qts0T9/view?usp=sharing",
       type: "secondary",
     },
   ],
