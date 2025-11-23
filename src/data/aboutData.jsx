@@ -42,9 +42,9 @@ const aboutData = {
   experience: [
     {
       id: 1,
-      company: "BZCOM Co., Ltd",
+      company: "FPT IS",
       role: "Frontend Intern",
-      period: "02/2025 – 06/2025",
+      period: "06/2025 – 10/2025",
       details: [
         "Built responsive UIs with React and Tailwind CSS",
         "Improved UI/UX and collaborated via Git/GitHub.",
