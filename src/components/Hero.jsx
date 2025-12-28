@@ -44,13 +44,12 @@ const Home = () => {
     return () => clearInterval(cursorTimer);
   }, []);
 
-  // Re-trigger slide-in when navigating to Home (e.g., via hash change)
   const imageWrapperRef = useRef(null);
   const playSlideIn = () => {
     const el = imageWrapperRef.current;
     if (!el) return;
     el.classList.remove("animate-slide-in-right");
-    void el.offsetWidth; // reflow to restart animation
+    void el.offsetWidth; 
     el.classList.add("animate-slide-in-right");
   };
 

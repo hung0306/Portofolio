@@ -17,7 +17,6 @@ const About = () => {
       data-aos-duration="1000"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
         <header
           className="text-center text-gray-800 dark:text-white mb-12"
           data-aos="fade-down"
@@ -28,8 +27,6 @@ const About = () => {
             {aboutData.subtitle}
           </p>
         </header>
-
-        {/* Tabs */}
         <Tabs />
       </div>
     </section>
@@ -40,7 +37,6 @@ const Tabs = () => {
   const [active, setActive] = useState("information");
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
-      {/* Tab headers */}
       <div
         className="flex justify-center gap-3 mb-6 flex-wrap"
         data-aos="fade-up"
@@ -106,7 +102,6 @@ const InformationTab = () => {
       data-aos-delay="600"
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-        {/* Left column: narrative cards */}
         <div className="grid grid-cols-1 gap-6">
           <div
             className="flex flex-col gap-3 bg-gray-800/40 border border-cyan-400/20 rounded-xl p-6 shadow-lg"
@@ -148,7 +143,6 @@ const InformationTab = () => {
           </div>
         </div>
 
-        {/* Right column: Personal info card with 2 columns x 3 items */}
         <div
           className="bg-gray-800/40 border border-cyan-400/20 rounded-xl p-6 shadow-lg"
           data-aos="fade-left"
@@ -221,9 +215,7 @@ const ExperienceTab = () => (
         data-aos="fade-up"
         data-aos-delay={`${800 + index * 200}`}
       >
-        {/* left accent bar */}
         <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-cyan-400 to-fuchsia-400 opacity-70" />
-        {/* subtle gradient glow on hover */}
         <div className="pointer-events-none absolute -inset-px rounded-[0.75rem] bg-gradient-to-r from-cyan-400/20 via-fuchsia-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 
         <div className="relative z-10">

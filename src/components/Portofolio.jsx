@@ -14,7 +14,6 @@ const Portfolio = () => {
       data-aos="fade-down"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Title & Subtitle */}
         <div
           className="text-center mb-12 text-gray-100"
           data-aos-delay="600"
@@ -28,7 +27,6 @@ const Portfolio = () => {
           </p>
         </div>
 
-        {/* Tabs Menu */}
         <div
           className="flex justify-center mb-8 gap-4 flex-wrap"
           data-aos-delay="600"
@@ -52,9 +50,7 @@ const Portfolio = () => {
           ))}
         </div>
 
-        {/* Tabs Content */}
         <div>
-          {/* Projects Tab */}
           {activeTab === "projects" && (
             <div
               className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
@@ -114,9 +110,6 @@ const Portfolio = () => {
             </div>
           )}
 
-          {/* Certificates Tab removed */}
-
-          {/* Tech Stack moved to About */}
         </div>
       </div>
     </section>

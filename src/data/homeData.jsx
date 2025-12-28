@@ -41,7 +41,6 @@ const homeData = {
     },
   ],
 
-  // Front-end skills to display as badges in the hero section
   skills: [
     "HTML5",
     "CSS3",

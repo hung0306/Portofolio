@@ -14,7 +14,6 @@ const Contact = () => {
       data-aos="fade-down"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Title & Subtitle */}
         <div
           className="text-center mb-12 text-gray-100"
           data-aos-delay="600"
@@ -24,7 +23,6 @@ const Contact = () => {
           <p className="text-lg text-gray-400">{contactData.subtitle}</p>
         </div>
 
-        {/* Tabs Menu */}
         <div
           className="flex justify-center mb-8 gap-4 flex-wrap"
           data-aos-delay="600"
@@ -48,7 +46,6 @@ const Contact = () => {
           ))}
         </div>
 
-        {/* Tabs Content */}
         <div>
           {activeTab === "contact" && (
             <div
@@ -56,7 +53,6 @@ const Contact = () => {
               data-aos-delay="600"
               data-aos="fade-down"
             >
-              {/* Left Side: Social Links */}
               <div className="grid gap-4 max-w-xl mx-auto lg:mx-0">
                 {contactData.socials.map((item, index) => (
                   <a
@@ -85,7 +81,6 @@ const Contact = () => {
                 ))}
               </div>
 
-              {/* Right Side: Contact Form */}
               <div className="rounded-lg py-12 px-7 shadow-lg border h-fit border-cyan-400/20 bg-gray-800/40 max-w-xl w-full mx-auto lg:mx-0">
                 <h3 className="text-xl font-semibold mb-6 text-gray-100 flex items-center gap-2">
                   <i className="bx bx-envelope text-lg" />
@@ -130,7 +125,6 @@ const Contact = () => {
             </div>
           )}
 
-          {/* Support tab removed */}
         </div>
       </div>
     </section>

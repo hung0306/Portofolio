@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { createClient } from "@supabase/supabase-js";
 import Swal from "sweetalert2";
 
-// Inisialisasi Supabase client
 const supabaseUrl = "https://yifexgkxhzlndrrdpnqh.supabase.co";
 const supabaseKey =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlpZmV4Z2t4aHpsbmRycmRwbnFoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTA5NDQ1NTAsImV4cCI6MjA2NjUyMDU1MH0.D-Y3Bbuqk5ZMdbDAeW0kvgs_44NxSGJmXePauhWY6vA";
@@ -13,13 +12,11 @@ const CustomModal = ({ isOpen, onClose, children }) => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
-      {/* Backdrop */}
       <div
         className="absolute inset-0 backdrop-blur-xl transition-opacity"
         onClick={onClose}
       />
 
-      {/* Modal Content */}
       <div className="relative bg-white dark:bg-gray-800 rounded-xl shadow-lg max-w-md w-full mx-4 transform transition-all">
         <button
           onClick={onClose}
@@ -46,7 +43,6 @@ const Testimonials = () => {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Fetch testimonials dari Supabase saat komponen mount
   useEffect(() => {
     const fetchTestimonials = async () => {
       const { data, error } = await supabase
@@ -62,14 +58,12 @@ const Testimonials = () => {
     fetchTestimonials();
   }, []);
 
-  // Handle form input changes
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
       [name]: value,
     }));
-    // Clear error when user starts typing
     if (errors[name]) {
       setErrors((prev) => ({
         ...prev,
@@ -78,7 +72,6 @@ const Testimonials = () => {
     }
   };
 
-  // Validate form
   const validateForm = () => {
     const newErrors = {};
 
@@ -106,7 +99,6 @@ const Testimonials = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  // Handle form submission
   const handleSubmit = async () => {
     if (!validateForm()) {
       return;
@@ -114,7 +106,6 @@ const Testimonials = () => {
 
     setIsSubmitting(true);
 
-    // Insert testimonial ke Supabase
     const { error } = await supabase.from("testimonials").insert([
       {
         name: formData.name,
@@ -144,8 +135,6 @@ const Testimonials = () => {
       });
       return;
     }
-
-    // Refresh testimonials
     const { data } = await supabase
       .from("testimonials")
       .select("*")
@@ -156,7 +145,6 @@ const Testimonials = () => {
     setIsModalOpen(false);
     setIsSubmitting(false);
 
-    // Show success message
     Swal.fire({
       icon: "success",
       title: "Thank You!",
@@ -170,7 +158,6 @@ const Testimonials = () => {
     });
   };
 
-  // Render stars
   const renderStars = (rating) => {
     return [...Array(5)].map((_, index) => (
       <i
@@ -190,7 +177,6 @@ const Testimonials = () => {
       data-aos="fade-down"
     >
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
         <div
           className="text-center mb-16"
           data-aos-delay="600"
@@ -205,13 +191,11 @@ const Testimonials = () => {
           </p>
         </div>
 
-        {/* Testimonial Card */}
         <div
           className="bg-white dark:bg-gray-800 rounded-lg mb-10 shadow-lg border border-white dark:border-white max-w-4xl mx-auto"
           data-aos-delay="600"
           data-aos="fade-up"
         >
-          {/* Card Header */}
           <div className="flex justify-between items-center p-6 border-b border-gray-200 dark:border-gray-700">
             <h3 className="text-xl font-semibold text-gray-800 dark:text-white flex items-center gap-2">
               <i className="bx bx-comment-detail text-2xl" />
@@ -227,8 +211,6 @@ const Testimonials = () => {
               Add Testimonial
             </button>
           </div>
-
-          {/* Card Body (Scrollable) */}
           <div className="max-h-[500px] overflow-y-auto scrollbar-hide p-6">
             {testimonials.length > 0 ? (
               <div className="space-y-6">
@@ -240,22 +222,18 @@ const Testimonials = () => {
                       animationDelay: `${index * 100}ms`,
                     }}
                   >
-                    {/* Quote Icon */}
                     <div className="mb-2">
                       <i className="bx bxs-quote-alt-left text-2xl text-gray-300 dark:text-gray-600" />
                     </div>
 
-                    {/* Content */}
                     <p className="text-gray-800 dark:text-white mb-4 leading-relaxed text-sm">
                       {testimonial.content}
                     </p>
 
-                    {/* Rating */}
                     <div className="flex items-center gap-1 mb-3">
                       {renderStars(testimonial.rating)}
                     </div>
 
-                    {/* Author Info */}
                     <div className="flex items-center gap-3">
                       <img
                         src={testimonial.avatar}
@@ -295,7 +273,6 @@ const Testimonials = () => {
         </div>
       </div>
 
-      {/* Custom Modal */}
       <CustomModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <div className="p-6 sm:p-8">
           <div className="text-center mb-8">
@@ -311,7 +288,6 @@ const Testimonials = () => {
           </div>
 
           <div className="grid gap-4">
-            {/* Name Input */}
             <div>
               <label className="block text-sm font-medium text-gray-800 dark:text-white mb-1">
                 Full Name
@@ -339,7 +315,6 @@ const Testimonials = () => {
               )}
             </div>
 
-            {/* Email Input */}
             <div>
               <label className="block text-sm font-medium text-gray-800 dark:text-white mb-1">
                 Email
@@ -367,7 +342,6 @@ const Testimonials = () => {
               )}
             </div>
 
-            {/* Position Input */}
             <div>
               <label className="block text-sm font-medium text-gray-800 dark:text-white mb-1">
                 Position
@@ -395,7 +369,6 @@ const Testimonials = () => {
               )}
             </div>
 
-            {/* Content Textarea */}
             <div>
               <label className="block text-sm font-medium text-gray-800 dark:text-white mb-1">
                 Testimonial
@@ -423,7 +396,6 @@ const Testimonials = () => {
               )}
             </div>
 
-            {/* Buttons */}
             <div className="flex gap-3 pt-4">
               <button
                 type="button"

@@ -6,7 +6,6 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-gray-100 py-12">
       <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
-        {/* Brand */}
         <div>
           <h3 className="flex items-center text-2xl font-bold mb-2 gap-2">
             <i
@@ -19,7 +18,6 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* Navigation */}
         <div>
           <h4 className="flex items-center gap-2 text-lg font-semibold mb-3">
             <i className={`${footerData.navigationIcon} text-base`}></i>
@@ -36,7 +34,6 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Socials */}
         <div>
           <h4 className="flex items-center gap-2 text-lg font-semibold mb-3">
             <i className={`${footerData.socialsIcon} text-base`}></i>
@@ -62,7 +59,6 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Subscribe Form */}
         <div>
           <h4 className="flex items-center gap-2 text-lg font-semibold mb-3">
             <i className="bx bx-mail-send text-base" />
@@ -100,12 +96,9 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Divider */}
       <hr className="my-8 border-gray-800 dark:border-gray-700" />
 
-      {/* Bottom Footer */}
       <div className="mt-8 max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-sm text-gray-800 dark:text-white gap-4">
-        {/* Legal Links */}
         <div className="flex gap-4 flex-wrap">
           {footerData.legalLinks.map((link, index) => (
             <a
@@ -118,7 +111,6 @@ const Footer = () => {
           ))}
         </div>
 
-        {/* Copyright */}
         <div className="text-center md:text-right">{footerData.copyright}</div>
       </div>
     </footer>

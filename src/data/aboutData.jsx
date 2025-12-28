@@ -22,7 +22,6 @@ const aboutData = {
   },
 
   aboutNarrative: {
-    // replaced in UI by certificate
     whoAmI: {
       text: `I'm a frontend developer who crafts responsive, interactive, and clean UIs. With a background in Informatics Engineering, I blend design sense with technical logic.`,
       icon: "bx-info-circle",
@@ -44,7 +43,7 @@ const aboutData = {
       id: 1,
       company: "FPT IS",
       role: "Frontend Intern",
-      period: "06/2025 – 10/2025",
+      period: "04/2025 – 10/2025",
       details: [
         "Built responsive UIs with React and Tailwind CSS",
         "Improved UI/UX and collaborated via Git/GitHub.",
